@@ -413,4 +413,4 @@ function Model({ ...props }: JSX.IntrinsicElements['group']) {
 
 useGLTF.preload('/assets/BaseSpiderMan.glb')
 
-export default withRouter(Model)
+export default Model
