@@ -1,0 +1,70 @@
+div {
+    text-align: center;
+}
+
+.flame {
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+            45deg, 
+            rgba(29,98,240,0.7), 
+            rgba(5,251,255,0.7), 
+        ), 
+        url(../images/gaikotu.jpg);
+    background-position: 10%;
+    background-size: 120% 120%;
+    .logo-div {
+        font-size: 3em;
+        position: absolute;
+        top: 3%;
+        left: 3%;
+        font-family: 'Sacramento', cursive;
+        opacity: 0.6;
+        display: inline-flex;
+        align-items: center;
+    }
+    .title {
+        font-size: 10ch;
+        font-family: 'Montserrat Subrayada', sans-serif;
+        overflow: hidden;
+    }
+    .button {
+        height: 10vh;
+        margin-top: 10vh;
+        font-size: 4em;
+        border: none; 
+        text-align: center;
+        background-color: transparent;
+        animation: blink 0.9s ease-in-out infinite alternate;
+        animation-delay: 2.7s;
+        .button-font {
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+    .icons {
+        position: absolute;
+        right: 5vw;
+        bottom: 5vh;
+        .circle{
+            margin-left: 0.6vw;
+            display: inline-block;
+            border-radius: 50%;
+            border: solid 1px white;
+            text-align:center;
+        }
+    }
+}
+
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+    

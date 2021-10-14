@@ -1,0 +1,145 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+  /*rem算出をしやすくするために*/
+}
+
+.area {
+  width: 100%;
+  height: 100vh;
+  color: white;
+  background: -webkit-radial-gradient(rgba(5, 251, 255, 0.4) 50%, rgba(29, 98, 240, 0.6) 100%);
+  background: radial-gradient(rgba(5, 251, 255, 0.4) 50%, rgba(29, 98, 240, 0.6) 100%);
+}
+
+.area .logo-div {
+  font-size: 3em;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  font-family: 'Sacramento', cursive;
+  opacity: 0.6;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.area .menu {
+  position: absolute;
+  text-align: center;
+  right: 5%;
+  top: 3%;
+  width: 10vw;
+  padding-top: 10px;
+  z-index: 3;
+}
+
+.area .menu > li {
+  list-style: none;
+}
+
+.area .menu > li a {
+  display: table;
+  margin-top: 0;
+  padding: 14px 10px;
+  width: 100%;
+  background: rgba(29, 98, 240, 0);
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  overflow: hidden;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  margin-top: 0;
+}
+
+.area .menu > li a:hover {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  background: rgba(29, 98, 240, 0);
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.area .menu > li ul {
+  margin: 0;
+  padding: 0;
+}
+
+.area .menu > li li a {
+  display: block;
+  margin-top: 0;
+  padding: 0 10px;
+  height: 0;
+  background: rgba(29, 98, 240, 0);
+  color: white;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.area .menu > li:hover li a {
+  display: table;
+  text-align: center;
+  padding-top: 50%;
+  width: 100%;
+  height: 10vh;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.area .menu > li:hover li a:hover {
+  background: rgba(29, 98, 240, 0);
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.area .btn-component {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2rem;
+}
+
+.area .btn-component .btn {
+  font-size: 1.6rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  vertical-align: middle;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: solid;
+  border-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 0 5px 0 rgba(255, 255, 255, 0.8);
+          box-shadow: 0 5px 0 rgba(255, 255, 255, 0.8);
+}
+
+.area .btn-component .btn:hover {
+  -webkit-transform: translate(0, 3px);
+          transform: translate(0, 3px);
+  -webkit-box-shadow: 0 2px 0 rgba(255, 255, 255, 0.4);
+          box-shadow: 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+.area .btn-component .btn a:link {
+  color: rgba(29, 98, 240, 0.6);
+}
+
+.area .btn-component .btn a:visited {
+  color: rgba(29, 98, 240, 0.6);
+}
+/*# sourceMappingURL=body.css.map */
