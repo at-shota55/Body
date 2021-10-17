@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch, useHistory, withRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
@@ -11,23 +11,31 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+  const history = useHistory();
+
+  const goToStretch = () => {
+    history.push('/stretch')
+  }
+
   return (
-    <>
+    <div>
       <GlobalStyle />
       <Route 
         render = {({location}) => (
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
               <Route exact path='/' component={Start} />
-              <Route exact path='/app' component={MainApp} />
+              <Route exact path='/app' component={MainApp}>
+                <MainApp goToStretch={goToStretch} />
+              </Route>
               <Route exact path='/stretch' component={Stretch} />
               <Redirect to='/'/>
             </Switch>
             </AnimatePresence>
         )}
       />
-    </>
+    </div>
   )
 };
 
-export default App;
+export default withRouter(App);

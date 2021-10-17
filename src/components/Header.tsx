@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+
 function Header() {
     return (
         <HeaderComponent>
@@ -22,6 +23,7 @@ const LinkButton = styled.button`
     top: 4.5vh;
     position: absolute;
     background-color: transparent;
+    z-index: 1;
 `;
 
 const MainTitle = styled.h1`

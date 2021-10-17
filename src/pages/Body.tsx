@@ -3,9 +3,15 @@ import "../scss/body.scss";
 import { GiAbstract002 } from "react-icons/gi";
 import { AiOutlineHome } from "react-icons/ai";
 import Body from "../components/Load";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function MainApp() {
+interface Prop {
+  goToStretch: () => void,
+}
+
+const MainApp: React.FC<Prop> = (props) => {
+  const { goToStretch } = props
+
   return (
     <div>
       <motion.div
@@ -29,7 +35,7 @@ function MainApp() {
               </li>
             </ul>
           </motion.div>
-          <Body></Body>
+          <Body goToStretch={goToStretch}/>
           <div className="btn-component">
             <button className="btn">
               <Link to="/">
@@ -41,6 +47,5 @@ function MainApp() {
     </div>
   )
 };
-
 
 export default MainApp;
