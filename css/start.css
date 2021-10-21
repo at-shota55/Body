@@ -18,8 +18,8 @@ div {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-linear-gradient(45deg, rgba(29, 98, 240, 0.7), rgba(5, 251, 255, 0.7)), url(../images/gaikotu.jpg);
-  background: linear-gradient(45deg, rgba(29, 98, 240, 0.7), rgba(5, 251, 255, 0.7)), url(../images/gaikotu.jpg);
+  background: -webkit-linear-gradient(45deg, rgba(29, 98, 240, 0.7), rgba(5, 251, 255, 0.7)), url(../../images/gaikotu.jpg);
+  background: linear-gradient(45deg, rgba(29, 98, 240, 0.7), rgba(5, 251, 255, 0.7)), url(../../images/gaikotu.jpg);
   background-position: 10%;
   background-size: 120% 120%;
 }

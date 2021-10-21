@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import "../scss/body.scss";
+import "./body.scss";
 import { GiAbstract002 } from "react-icons/gi";
 import { AiOutlineHome } from "react-icons/ai";
-import Body from "../components/Load";
+import Body from "../../components/BodyComponent/Load";
 import { Link } from "react-router-dom";
 
 interface Prop {
@@ -21,7 +21,7 @@ const MainApp: React.FC<Prop> = (props) => {
         className="area"
       >
           <div className="logo-div">
-            <span><GiAbstract002 />Ats</span>
+            <span><GiAbstract002 />DcS</span>
           </div>
           <motion.div>
             <ul className="menu">

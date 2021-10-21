@@ -37,31 +37,38 @@ interface Prop {
   goToStretch: () => void,
 }
 
+const bodyList = [
+  {
+    part: "top"
+  }, 
+  {
+    part: "arms"
+  },
+  {
+    part: "stomach"
+  },
+  {
+    part: "back"
+  },
+  {
+    part: "legs"
+  },
+]
+
 const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['group']) => {
   const group = useRef<THREE.Group>()
   const { nodes } = useGLTF('/assets/BaseSpiderMan.glb') as GLTFResult
   const { goToStretch } = proped;
 
-  const [head, setHead] = useState(false);
-  const [neck, setNeck] = useState(false);
+  const [top, setTop] = useState(false);
   const [torso, setTorso] = useState(false);
   const [back, setBack] = useState(false);
-  const [leftShoulder, setLftShoulder] = useState(false);
-  const [leftArm, setLeftArm] = useState(false);
-  const [leftHand, setLeftHand] = useState(false);
-  const [rightShoulder, setRightShoulder] = useState(false);
-  const [rightArm, setRightArm] = useState(false);
-  const [rightHand, setRightHand] = useState(false);
-  const [leftThigh, setLeftThigh] = useState(false);
-  const [leftCalf, setLeftCalf] = useState(false);
-  const [leftFoot, setLeftFoot] = useState(false);
-  const [rightThigh, setRightThigh] = useState(false);
-  const [rightCalf, setRightCalf] = useState(false);
-  const [rightFoot, setRightFoot] = useState(false);
-
+  const [arms, setArms] = useState(false);
+  const [legs, setLegs] = useState(false);
 
   return (
     <group ref={group} {...props} dispose={null}>
+      {/* 頭・首・肩 */}
       {/* 頭 */}
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
         <mesh
@@ -72,13 +79,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setHead(true);
+            setTop(true);
           }}
           onPointerOut={() => {
-            setHead(false);
+            setTop(false);
           }}
         >
-          <meshStandardMaterial color={head ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={top ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       {/* 首 */}
@@ -91,16 +98,56 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setNeck(true);
+            setTop(true);
           }}
           onPointerOut={() => {
-            setNeck(false);
+            setTop(false);
           }}
         >
-          <meshStandardMaterial color={neck ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={top ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
-      {/* 前胴体 */}
+      {/* 右肩 */}
+      <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BaseSpiderMan015.geometry}
+          material={nodes.BaseSpiderMan015.material}
+          position={[0, 0, 1.1]}
+          onClick={goToStretch}
+          onPointerOver={() => {
+            setTop(true);
+          }}
+          onPointerOut={() => {
+            setTop(false);
+          }}
+        >
+          <meshStandardMaterial color={top ? "#e7f1fb" : "#94c1ed"} />
+        </mesh>
+      </group>
+      {/* 左肩 */}
+      <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BaseSpiderMan012.geometry}
+          material={nodes.BaseSpiderMan012.material}
+          position={[0, 0, 1.1]}
+          onClick={goToStretch}
+          onPointerOver={() => {
+            setTop(true);
+          }}
+          onPointerOut={() => {
+            setTop(false);
+          }}
+        >
+          <meshStandardMaterial color={top ? "#e7f1fb" : "#94c1ed"} />
+        </mesh>
+      </group>
+      {/* ここまで */}
+
+      {/* お腹周り */}
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
         <mesh
           castShadow
@@ -119,6 +166,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           <meshStandardMaterial color={torso ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
+
       {/* 背中 */}
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
         <mesh
@@ -138,25 +186,8 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           <meshStandardMaterial color={back ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
-      {/* 左肩 */}
-      <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BaseSpiderMan012.geometry}
-          material={nodes.BaseSpiderMan012.material}
-          position={[0, 0, 1.1]}
-          onClick={goToStretch}
-          onPointerOver={() => {
-            setLftShoulder(true);
-          }}
-          onPointerOut={() => {
-            setLftShoulder(false);
-          }}
-        >
-          <meshStandardMaterial color={leftShoulder ? "#e7f1fb" : "#94c1ed"} />
-        </mesh>
-      </group>
+
+      {/* 腕 */}
       {/* 左腕 */}
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
         <mesh
@@ -167,13 +198,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setLeftArm(true);
+            setArms(true);
           }}
           onPointerOut={() => {
-            setLeftArm(false);
+            setArms(false);
           }}
         >
-          <meshStandardMaterial color={leftArm ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={arms ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
@@ -185,16 +216,15 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setLeftArm(true);
+            setArms(true);
           }}
           onPointerOut={() => {
-            setLeftArm(false);
+            setArms(false);
           }}
         >
-          <meshStandardMaterial color={leftArm ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={arms ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
-      {/* ここまで */}
       {/* 左手 */}
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
         <mesh
@@ -205,32 +235,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setLeftHand(true);
+            setArms(true);
           }}
           onPointerOut={() => {
-            setLeftHand(false);
+            setArms(false);
           }}
         >
-          <meshStandardMaterial color={leftHand ? "#e7f1fb" : "#94c1ed"} />
-        </mesh>
-      </group>
-      {/* 右肩 */}
-      <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.BaseSpiderMan015.geometry}
-          material={nodes.BaseSpiderMan015.material}
-          position={[0, 0, 1.1]}
-          onClick={goToStretch}
-          onPointerOver={() => {
-            setRightShoulder(true);
-          }}
-          onPointerOut={() => {
-            setRightShoulder(false);
-          }}
-        >
-          <meshStandardMaterial color={rightShoulder ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={arms ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       {/* 右腕 */}
@@ -243,13 +254,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setRightArm(true);
+            setArms(true);
           }}
           onPointerOut={() => {
-            setRightArm(false);
+            setArms(false);
           }}
         >
-          <meshStandardMaterial color={rightArm ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={arms ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
@@ -261,16 +272,15 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setRightArm(true);
+            setArms(true);
           }}
           onPointerOut={() => {
-            setRightArm(false);
+            setArms(false);
           }}
         >
-          <meshStandardMaterial color={rightArm ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={arms ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
-      {/* ここまで */}
       {/* 右手 */}
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
         <mesh
@@ -281,15 +291,18 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setRightHand(true);
+            setArms(true);
           }}
           onPointerOut={() => {
-            setRightHand(false);
+            setArms(false);
           }}
         >
-          <meshStandardMaterial color={rightHand ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={arms ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
+      {/* ここまで */}
+
+      {/* 脚 */}
       {/* 左太もも */}
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
         <mesh
@@ -300,13 +313,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
             onPointerOver={() => {
-              setLeftThigh(true);
+              setLegs(true);
             }}
             onPointerOut={() => {
-              setLeftThigh(false);
+              setLegs(false);
             }}
           >
-            <meshStandardMaterial color={leftThigh ? "#e7f1fb" : "#94c1ed"} />
+            <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       {/* 左ふくらはぎ */}
@@ -319,13 +332,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setLeftCalf(true);
+            setLegs(true);
           }}
           onPointerOut={() => {
-            setLeftCalf(false);
+            setLegs(false);
           }}
         >
-          <meshStandardMaterial color={leftCalf ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       {/* 左足 */}
@@ -338,13 +351,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setLeftFoot(true);
+            setLegs(true);
           }}
           onPointerOut={() => {
-            setLeftFoot(false);
+            setLegs(false);
           }}
         >
-          <meshStandardMaterial color={leftFoot ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       {/* 右太もも */}
@@ -357,13 +370,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setRightThigh(true);
+            setLegs(true);
           }}
           onPointerOut={() => {
-            setRightThigh(false);
+            setLegs(false);
           }}
         >
-          <meshStandardMaterial color={rightThigh ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       {/* 右ふくらはぎ */}
@@ -376,13 +389,13 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           position={[0, 0, 1.1]}
           onClick={goToStretch}
           onPointerOver={() => {
-            setRightCalf(true);
+            setLegs(true);
           }}
           onPointerOut={() => {
-            setRightCalf(false);
+            setLegs(false);
           }}
         >
-          <meshStandardMaterial color={rightCalf ? "#e7f1fb" : "#94c1ed"} />
+          <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       {/* 右足 */}
@@ -394,16 +407,17 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           material={nodes.BaseSpiderMan002.material}
           position={[0, 0, 1.1]}
           onClick={goToStretch}
-            onPointerOver={() => {
-              setRightFoot(true);
-            }}
-            onPointerOut={() => {
-              setRightFoot(false);
-            }}
-          >
-            <meshStandardMaterial color={rightFoot ? "#e7f1fb" : "#94c1ed"} />
+          onPointerOver={() => {
+            setLegs(true);
+          }}
+          onPointerOut={() => {
+            setLegs(false);
+          }}
+        >
+          <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
           </mesh>
       </group>
+      {/* ここまで */}
     </group>
   )
 }

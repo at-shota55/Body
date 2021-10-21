@@ -1,4 +1,4 @@
-import "../scss/start.scss";
+import "./start.scss";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
@@ -61,7 +61,7 @@ function Start() {
                 variants={variants}
             >
                 <div className="logo-div">
-                    <span><GiAbstract002 />Ats</span>
+                    <span><GiAbstract002 />DcS</span>
                 </div>
                 <div>
                     <motion.h2 
@@ -105,10 +105,10 @@ function Start() {
                     variants={item}
                 >
                     <IconContext.Provider value={{ color: 'white', size: '30px' }}>
-                        <TiSocialTwitter className="circle"/>
-                        <TiSocialInstagram className="circle"/>
-                        <TiSocialFacebook className="circle"/>
-                        <TiSocialGithub className="circle"/>
+                        <a href="#"><TiSocialTwitter className="circle"/></a>
+                        <a href="#"><TiSocialInstagram className="circle"/></a>
+                        <a href="#"><TiSocialFacebook className="circle"/></a>
+                        <a href="https://github.com/" target="_blank"><TiSocialGithub className="circle"/></a>
                     </IconContext.Provider>
                 </motion.div>
             </motion.div>
