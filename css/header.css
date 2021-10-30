@@ -2,6 +2,7 @@
   overflow: hidden;
   position: relative;
   height: 100vh;
+  width: 100%;
   color: #FFFFFF;
 }
 
@@ -99,10 +100,56 @@
   padding: 0;
 }
 
-.wrapper .title {
+.wrapper .header-component div .menu {
+  z-index: 60;
   position: absolute;
+  border-bottom: none;
+  border-radius: 10px;
+  width: 10vw;
+  height: auto;
+  top: 4vh;
+  margin-left: 80vw;
+  padding: 0 1px 10px 1px;
+  font-size: 1.5em;
+  font-family: 'Noto Sans JP', sans-serif;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wrapper .header-component div .menu .under-arrow {
+  height: 19px;
+  width: 19px;
+  vertical-align: bottom;
+}
+
+.wrapper .header-component div .menu li {
+  margin: 3px;
+  cursor: pointer;
+}
+
+.wrapper .header-component div .menu li ul {
+  display: none;
+  padding-top: 10px;
+}
+
+.wrapper .header-component div .menu li ul li {
+  padding: 20px 0;
+  border-top: 2px solid white;
+}
+
+.wrapper .header-component div .menu li:hover {
+  font-size: 1.1em;
+}
+
+.wrapper .header-component div .menu li:hover ul {
+  display: block;
+  font-size: 0.8em;
+}
+
+.wrapper .title {
+  width: 100%;
+  position: relative;
   top: 15vw;
-  left: 40vw;
   color: white;
   z-index: 50;
   font-size: 4em;

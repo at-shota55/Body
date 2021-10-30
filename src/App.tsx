@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch, useHistory, withRouter, useParams } from "react-router-dom";
+import { Redirect, Route, Switch, useHistory, withRouter, useParams, RouteProps } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
@@ -6,17 +6,16 @@ import MainApp from "./pages/Body/Body";
 import Start from "./pages/Startup/Start";
 import Stretch from "./pages/Stretch/Stretch";
 
-
 const GlobalStyle = createGlobalStyle`
   ${reset}
 `;
 
-function App() {
+const App  = () => {
   const history = useHistory();
 
-  const goToStretch = () => {
-    history.push(`/stretch`)
-  }
+  const goToStretch = ({part, body} : {part: string, body: string}) => {
+    history.push(`/stretch/${part}`, {body : body})
+  };
 
   return (
     <div>
@@ -27,10 +26,9 @@ function App() {
             <Switch location={location} key={location.pathname}>
               <Route exact path='/' component={Start} />
               <Route exact path='/app' component={MainApp}>
-                <MainApp goToStretch={goToStretch} />
+                <MainApp goToStretch={({part, body} : {part: string, body: string}) => goToStretch({part, body})} />
               </Route>
-              <Route exact path={`/stretch`} component={Stretch} />
-              <Redirect to='/'/>
+              <Route exact path="/stretch/:part" component={Stretch} />
             </Switch>
             </AnimatePresence>
         )}

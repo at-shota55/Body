@@ -4,22 +4,8 @@ import { Canvas } from '@react-three/fiber';
 import Model from './BaseSpiderMan';
 
 interface Prop {
-    goToStretch: () => void,
+    goToStretch: ({part, body} : {part: string, body: string}) => void
 }
-
-// const label = {
-//     position: 'absolute',
-//     padding: '10px 20px',
-//     bottom: 'unset',
-//     right: 'unset',
-//     top: 60,
-//     left: 60,
-//     maxWidth: 380,
-// }
-
-// function HtmlLoader() {
-//     return <span style={{ ...label, border: '2px solid #10af90', color: '#10af90' }}>waiting...</span>
-// };
 
 const Body: VFC<Prop> = (props) => {
     const { goToStretch } = props
@@ -40,7 +26,7 @@ const Body: VFC<Prop> = (props) => {
             />
     
             <Suspense fallback={null}>
-                <Model goToStretch={goToStretch}/>
+                <Model goToStretch={({part, body} : {part: string, body: string}) => goToStretch({part , body})}/>
                 <Environment files="/assets/HDR_st05n.hdr" background={false}/>
             </Suspense>
         </Canvas>

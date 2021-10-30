@@ -1,5 +1,6 @@
 import "./start.scss";
 import { Link } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
 import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
 import { 
@@ -10,6 +11,7 @@ import {
 } from "react-icons/ti";
 import { GiAbstract002 } from "react-icons/gi"
 import { IoBodyOutline } from "react-icons/io5";
+import { SiNotion } from "react-icons/si";
 
 // ページ遷移（入り）
 const variants = {
@@ -105,10 +107,26 @@ function Start() {
                     variants={item}
                 >
                     <IconContext.Provider value={{ color: 'white', size: '30px' }}>
-                        <a href="#"><TiSocialTwitter className="circle"/></a>
-                        <a href="#"><TiSocialInstagram className="circle"/></a>
-                        <a href="#"><TiSocialFacebook className="circle"/></a>
-                        <a href="https://github.com/" target="_blank"><TiSocialGithub className="circle"/></a>
+                        <a href="#" data-tip="Notion">
+                            <SiNotion className="circle"/>
+                            <ReactTooltip effect="solid" backgroundColor="rgba(203, 215, 237,0.9)" />
+                        </a>
+                        <a href="#" data-tip="twitter">
+                            <TiSocialTwitter className="circle"/>
+                            <ReactTooltip effect="solid" backgroundColor="rgba(203, 215, 237,0.9)" />
+                        </a>
+                        <a href="#" data-tip="instagram">
+                            <TiSocialInstagram className="circle"/>
+                            <ReactTooltip effect="solid" backgroundColor="rgba(203, 215, 237,0.9)" />
+                        </a>
+                        <a href="#" data-tip="facebook">
+                            <TiSocialFacebook className="circle"/>
+                            <ReactTooltip effect="solid" backgroundColor="rgba(203, 215, 237,0.9)"/>    
+                        </a>
+                        <a href="https://github.com/" target="_blank" data-tip="github">
+                            <TiSocialGithub className="circle"/>
+                            <ReactTooltip effect="solid" backgroundColor="rgba(203, 215, 237,0.9)"/>    
+                        </a>
                     </IconContext.Provider>
                 </motion.div>
             </motion.div>

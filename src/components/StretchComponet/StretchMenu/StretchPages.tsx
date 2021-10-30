@@ -26,7 +26,7 @@ function StretchPages() {
         <div className="stretch-wrapper" ref={ref}>
             {stretchList.map(stretch => {
                 return(
-                    <div key={stretch.id} className={"stretch-page" + ' ' + (inView ? 'show' : '')}>
+                    <div id={stretch.title} key={stretch.id} className={"stretch-page" + ' ' + (inView ? 'show' : '')}>
                         <h2 className="stretch-title">{stretch.title}</h2>
                         <div className="page-wrapper">
                             <p className="stretch-sentence">{stretch.sentence}</p>

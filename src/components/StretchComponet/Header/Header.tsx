@@ -1,8 +1,19 @@
-import { Link } from "react-router-dom";
 import "./header.scss";
+import { Link, useLocation } from "react-router-dom";
+import { Link as Scroll } from "react-scroll";
 import { IoIosArrowBack } from "react-icons/io";
+import { BsArrowDownCircle } from "react-icons/bs";
+import { stretchList } from "../StretchMenu/StretchPages";
+
+type Id = {
+    part: string,
+    body: string
+}
 
 function Header() {
+    const location = useLocation<Id>();
+    const { body } = location.state;
+    
     return (
         <div className="wrapper">
             <div className="img">
@@ -19,9 +30,25 @@ function Header() {
                     </Link>
                 </button>            
                 <h1 className="main-title">Discover Stretch</h1>
-                <h2 className="menu">menu</h2>
+                <div>
+                    <ul className="menu">
+                        <li>menu <BsArrowDownCircle className="under-arrow"/>
+                            <ul>
+                                {stretchList.map(stretch => {
+                                    return (
+                                        <li>
+                                            <Scroll to={stretch.title}>
+                                                {stretch.title}
+                                            </Scroll>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <h2 className="title">タイトル</h2>
+            <h2 className="title">{body}</h2>
         </div>
     )
 };

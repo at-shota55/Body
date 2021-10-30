@@ -34,28 +34,10 @@ type GLTFResult = GLTF & {
 }
 
 interface Prop {
-  goToStretch: () => void,
+  goToStretch: ({part, body} : {part: string, body: string}) => void,
 }
 
-const bodyList = [
-  {
-    part: "top"
-  }, 
-  {
-    part: "arms"
-  },
-  {
-    part: "stomach"
-  },
-  {
-    part: "back"
-  },
-  {
-    part: "legs"
-  },
-]
-
-const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['group']) => {
+const Model: React.FC<Prop> = (proped, { ...props }: JSX.IntrinsicElements['group']) => {
   const group = useRef<THREE.Group>()
   const { nodes } = useGLTF('/assets/BaseSpiderMan.glb') as GLTFResult
   const { goToStretch } = proped;
@@ -77,7 +59,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan013.geometry}
           material={nodes.BaseSpiderMan013.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "top",  body : "首・肩"})}
           onPointerOver={() => {
             setTop(true);
           }}
@@ -87,6 +69,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
         >
           <meshStandardMaterial color={top ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
+
       </group>
       {/* 首 */}
       <group rotation={[Math.PI / 2, 0, 0]} scale={2.7}>
@@ -96,7 +79,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0020.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0020.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "top", body : "首・肩"})}
           onPointerOver={() => {
             setTop(true);
           }}
@@ -115,7 +98,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan015.geometry}
           material={nodes.BaseSpiderMan015.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "top", body : "首・肩"})}
           onPointerOver={() => {
             setTop(true);
           }}
@@ -134,7 +117,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan012.geometry}
           material={nodes.BaseSpiderMan012.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "top", body : "首・肩"})}
           onPointerOver={() => {
             setTop(true);
           }}
@@ -155,7 +138,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0021.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0021.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "torso", body : "お腹周り"})}
           onPointerOver={() => {
             setTorso(true);
           }}
@@ -175,7 +158,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0018.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0018.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "back", body : "背中・腰"})}
           onPointerOver={() => {
             setBack(true);
           }}
@@ -196,7 +179,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0011.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0011.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "arms", body : "腕・手"})}
           onPointerOver={() => {
             setArms(true);
           }}
@@ -214,7 +197,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0012.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0012.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "arms", body : "腕・手"})}
           onPointerOver={() => {
             setArms(true);
           }}
@@ -233,7 +216,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0009.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0009.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "arms", body : "腕・手"})}
           onPointerOver={() => {
             setArms(true);
           }}
@@ -252,7 +235,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan007.geometry}
           material={nodes.BaseSpiderMan007.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "arms", body : "腕・手"})}
           onPointerOver={() => {
             setArms(true);
           }}
@@ -270,7 +253,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan014.geometry}
           material={nodes.BaseSpiderMan014.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "arms", body : "腕・手"})}
           onPointerOver={() => {
             setArms(true);
           }}
@@ -289,7 +272,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan009.geometry}
           material={nodes.BaseSpiderMan009.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "arms", body : "腕・手"})}
           onPointerOver={() => {
             setArms(true);
           }}
@@ -311,15 +294,15 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan005.geometry}
           material={nodes.BaseSpiderMan005.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
-            onPointerOver={() => {
-              setLegs(true);
-            }}
-            onPointerOut={() => {
-              setLegs(false);
-            }}
-          >
-            <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
+          onClick={() => goToStretch({part : "legs", body : "足・太もも"})}
+          onPointerOver={() => {
+            setLegs(true);
+          }}
+          onPointerOut={() => {
+            setLegs(false);
+          }}
+        >
+          <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
         </mesh>
       </group>
       {/* 左ふくらはぎ */}
@@ -330,7 +313,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0004.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0004.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "legs", body : "足・太もも"})}
           onPointerOver={() => {
             setLegs(true);
           }}
@@ -349,7 +332,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0002.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0002.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "legs", body : "足・太もも"})}
           onPointerOver={() => {
             setLegs(true);
           }}
@@ -368,7 +351,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan006.geometry}
           material={nodes.BaseSpiderMan006.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "legs", body : "足・太もも"})}
           onPointerOver={() => {
             setLegs(true);
           }}
@@ -387,7 +370,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.Mesh_Model001_24_GTAMtl_10_00_0005.geometry}
           material={nodes.Mesh_Model001_24_GTAMtl_10_00_0005.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "legs", body : "足・太もも"})}
           onPointerOver={() => {
             setLegs(true);
           }}
@@ -406,7 +389,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           geometry={nodes.BaseSpiderMan002.geometry}
           material={nodes.BaseSpiderMan002.material}
           position={[0, 0, 1.1]}
-          onClick={goToStretch}
+          onClick={() => goToStretch({part : "legs", body : "足・太もも"})}
           onPointerOver={() => {
             setLegs(true);
           }}
@@ -415,7 +398,7 @@ const Model: React.FC<Prop> = (proped ,{ ...props }: JSX.IntrinsicElements['grou
           }}
         >
           <meshStandardMaterial color={legs ? "#e7f1fb" : "#94c1ed"} />
-          </mesh>
+        </mesh>
       </group>
       {/* ここまで */}
     </group>

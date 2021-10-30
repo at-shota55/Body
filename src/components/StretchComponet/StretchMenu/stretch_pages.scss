@@ -1,3 +1,20 @@
+html {
+    overflow: overlay; 
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background: rgba($color: white, $alpha: 0.3);
+    border: none;
+}
+::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 10px;
+    border-style: solid; 
+    border-color: rgba($color: blue, $alpha: 0.3);
+    box-shadow: none;
+}
 .stretch-wrapper {
     color: white;
     width: 100%;
