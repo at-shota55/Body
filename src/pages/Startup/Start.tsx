@@ -107,7 +107,7 @@ function Start() {
                     variants={item}
                 >
                     <IconContext.Provider value={{ color: 'white', size: '30px' }}>
-                        <a href="#" data-tip="Notion">
+                        <a href="https://www.notion.so/A-8987156fa1d54c5c8634cd64662b504d" data-tip="Notion">
                             <SiNotion className="circle"/>
                             <ReactTooltip effect="solid" backgroundColor="rgba(203, 215, 237,0.9)" />
                         </a>
