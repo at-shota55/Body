@@ -8,7 +8,6 @@
         .bone {
             width: 100%;
             height: 100%;
-            z-index: -1;
             li {
                 position: absolute;
                 width:100%;
@@ -16,10 +15,9 @@
                 background-size: cover;
                 background-position: 50% 50%;
                 background-repeat: no-repeat;
-                animation: anime 9s infinite ;
                 &::after {
                     content: '';
-                    background-color: rgba($color: #CAD9EE, $alpha: 0.4);
+                    background-color: rgba($color: #CAD9EE, $alpha: 0.1);
                     position: absolute;
                     left: 0;
                     right: 0;
@@ -27,15 +25,7 @@
                     bottom: 0
                 }
                 &:nth-child(1) { 
-                    background-image: url(../../../images/22469158_l.jpg);
-                }
-                &:nth-child(2) {
-                    background-image: url(../../../images/22469161_l.jpg);
-                    animation-delay: 3s;
-                }
-                &:nth-child(3) {
-                    background-image: url(../../../images/22303138_l.jpg);
-                    animation-delay: 6s;
+                    background-image: url(../../../images/gaikotu-2.jpg);
                 }
             }
         }
@@ -124,32 +114,40 @@
         }
     }
     .title {
-        width: 100%;
+        width: 20vw;
         position: relative;
-        top: 15vw;
+        top: 13vw;
         color: white;
         z-index: 50;
         font-size: 4em;
-        font-family: "Noto Sans JP";     
-    }
-}
-
-@keyframes anime { 
-    0% {
-        opacity: 0;
-        animation-timing-function:ease-in;
-    }
-    10% {
-        opacity: 1;
-    }
-    28% {
-        opacity: 1;
-    }
-    38% {
-        opacity: 0;
-    }
-    100% { 
-        opacity: 0;
-        animation-timing-function:ease-out; 
+        font-family: "Noto Sans JP";    
+        margin-bottom: 2em;
+        margin-left: 38vw;
+        padding: 1.5rem 2rem;
+        border-radius: 10px;
+        background:rgba(#CAD9EE, 0.7);
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            background: rgba(#CAD9EE, 0.6);
+        }
+        &:before {
+            right: 40px;
+            bottom: -15px;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+        }
+        
+        &:after {
+            right: 60px;
+            bottom: -30px;
+            width: 15px;
+            height: 15px;
+        } 
     }
 }
