@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch, useHistory, withRouter, useParams, RouteProps } from "react-router-dom";
+import { Route, Switch, useHistory, withRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
