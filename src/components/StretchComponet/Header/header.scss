@@ -1,0 +1,264 @@
+@import "../../../style.scss";
+
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: #FFFFFF;
+    .img {
+        .bone {
+            width: 100%;
+            height: 100%;
+            li {
+                position: absolute;
+                width:100%;
+                height: 100%;
+                background-size: cover;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                &::after {
+                    content: '';
+                    background-color: rgba($color: #CAD9EE, $alpha: 0.1);
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0
+                }
+                &:nth-child(1) { 
+                    background-image: url(../../../images/gaikotu-2.jpg);
+                }
+            }
+        }
+    }
+    .header-component {
+        position: absolute;
+        padding: 5vh 0;
+        width: 100vw;
+        height: auto;
+        .link-button {
+            z-index: 100;
+            left: 4.5vh;
+            top: 3.8vh;
+            position: absolute;
+            padding: 0.5rem 1rem;
+            transition: all 0.5s;
+            background-color: transparent;
+            border: none;
+            border-radius: 0.3rem;
+            border-bottom: 5px solid transparent;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+            font-size: 20px;
+            font-family: 'Noto Sans JP', sans-serif;
+            letter-spacing: 0.2em;
+            &:hover {
+                margin-top: 3px;
+                background: #CAD9EE;
+                border-bottom: 2px solid #a0b1c9;
+            }
+            .link-button-font {
+                color: white;
+                text-decoration: none;
+                .arrow {
+                    height: 29px;
+                    vertical-align: top;
+                    padding-right: 5px;
+                }
+            }
+        }
+        .main-title {
+            font-family: 'Montserrat Subrayada', sans-serif;
+            font-size: 2em;
+            z-index: 50;
+            position: relative;
+            text-align: center;
+        }
+        div {
+            .menu {
+                z-index: 60;
+                position: absolute;
+                border-bottom: none;
+                border-radius: 10px;
+                width: auto;
+                height: auto;
+                top: 4vh;
+                margin-left: 80vw;
+                padding: 0.3rem 0.5rem;
+                font-size:25px;
+                font-family: 'Noto Sans JP', sans-serif;
+                box-shadow:  0 3px 5px rgba(0, 0, 0, .3);
+                .under-arrow {
+                    height: 25px;
+                    width: 25px;
+                    vertical-align: bottom;
+                    font-size: 20px;
+                    padding-left: 0.5vw;
+                }
+                li{
+                    margin: 3px;
+                    cursor: pointer;
+                    letter-spacing: 0px;
+                    ul {
+                        display: none;
+                        padding-top: 10px;
+                        li {
+                            padding: 20px 0;
+                            border-top: 2px solid white;
+                        }
+                    }
+                    &:hover {
+                        font-size: 1.1em;
+                        ul {
+                            display: block;
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .title {
+        width: 20vw;
+        position: relative;
+        top: 13vw;
+        color: white;
+        z-index: 50;
+        font-size: 3.2em;
+        font-family: "Noto Sans JP";    
+        margin-bottom: 2em;
+        margin-left: 38vw;
+        padding: 1.5rem 2rem;
+        border-radius: 10px;
+        background:rgba(#CAD9EE, 0.7);
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            background: rgba(#CAD9EE, 0.6);
+        }
+        &:before {
+            right: 40px;
+            bottom: -15px;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+        }
+        
+        &:after {
+            right: 60px;
+            bottom: -30px;
+            width: 15px;
+            height: 15px;
+        } 
+    }
+
+    @include mq-range('lg') {
+        .header-component{
+            div {
+                .menu {
+                    width: auto;
+                }
+            }
+        }
+        .title {
+            width: 30vw;
+            margin-top: 10vh;
+            margin-left: 30vw;
+        }
+    }
+
+    @include mq-range('md') {
+        .header-component{
+            .link-button {
+                left: 4vh;
+                top: 4vh;
+                padding: 0.0001rem 0.1rem;
+            }
+            .main-title {
+                font-size: 1.5em;
+            }
+        }
+        .title {
+            width: 60vw;
+            top: 20vh;
+            left: 12vw;
+            margin: 0;
+        }
+    }
+
+    @include mq-range('sm') {
+        .header-component {
+            .link-button {
+                left: 4vh;
+                top: 4vh;
+                padding: 0.0001rem 0.1rem;
+            }
+            .main-title {
+                font-size: 1.4em;
+            }
+        }
+        .title {
+            width: 60vw;
+            top: 20vh;
+            left: 12vw;
+            margin: 0;
+            font-size: 2.8em;
+        }
+    }
+
+    @include mq-range('xs') {
+        .header-component {
+            .link-button {
+                left: 3vh;
+                top: 4vh;
+                padding: 0.0001rem 0.1rem;
+            }
+            .main-title {
+                font-size: 1.1em;
+            }
+        }
+        .title {
+            width: 65vw;
+            top: 22vh;
+            left: 8vw;
+            margin: 0;
+            font-size: 2.5em;
+        }
+    }
+
+    @include mq-down('md') {
+        .header-component {
+            div {
+                .menu {
+                    top: 40vh;
+                    right: 0;
+                    box-shadow: 1px rgba(0, 0, 0, .3);
+                    li {
+                        font-size: 15px;
+                        .yoga-wrapper {
+                            width: 16vw;
+                            text-align: center;
+                            display:inline-block;
+                            .yoga {
+                                width: 1.5em;
+                                height: 2em;
+                            }
+                            .yoga-menu {
+                                color: black;
+                                display:block;
+                                font-size: smaller;
+                            }
+                        }
+                        &:hover {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

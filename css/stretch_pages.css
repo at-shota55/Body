@@ -1,0 +1,102 @@
+html {
+  overflow: overlay;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(0, 0, 255, 0.3);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.stretch-wrapper {
+  color: white;
+  width: auto;
+  height: auto;
+}
+
+.stretch-wrapper .stretch-page {
+  position: relative;
+  margin-top: 10vh;
+  padding: 1em 5em;
+  opacity: 0;
+  -webkit-transition: 3s;
+  transition: 3s;
+}
+
+.stretch-wrapper .stretch-page:first-child {
+  margin-top: 0;
+}
+
+.stretch-wrapper .stretch-page .stretch-title {
+  text-align: left;
+  padding-top: 5vh;
+  padding-left: 10vw;
+  font-size: 4em;
+}
+
+.stretch-wrapper .stretch-page .page-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  margin-top: 5vh;
+}
+
+.stretch-wrapper .stretch-page .page-wrapper .stretch-movie {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.stretch-wrapper .stretch-page .page-wrapper .stretch-sentence {
+  font-size: 2em;
+  position: absolute;
+  margin-top: 5vh;
+  padding: 0.5em;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+
+.stretch-wrapper .show {
+  opacity: 1;
+  background-position: 0% 0.5em;
+  -webkit-animation: SlideIn 3s ease-out both;
+          animation: SlideIn 3s ease-out both;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+@media screen and (max-width: 500px) {
+  .stretch-wrapper {
+    margin-top: 0.5vh;
+  }
+  .stretch-wrapper .stretch-page {
+    margin-top: 0;
+    padding: 2em;
+  }
+  .stretch-wrapper .stretch-page .stretch-title {
+    padding-top: 2vh;
+    padding-left: 0;
+    font-size: 2em;
+  }
+  .stretch-wrapper .stretch-page .page-wrapper .stretch-sentence {
+    font-size: 1em;
+    margin-top: 2vh;
+  }
+  .stretch-wrapper .stretch-page .page-wrapper .stretch-movie {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=stretch_pages.css.map */

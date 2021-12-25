@@ -1,0 +1,174 @@
+div {
+  text-align: center;
+}
+
+.flame {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-linear-gradient(45deg, rgba(203, 215, 237, 0.5), rgba(202, 217, 238, 0.5)), url(../../images/gaikotu.jpg);
+  background: linear-gradient(45deg, rgba(203, 215, 237, 0.5), rgba(202, 217, 238, 0.5)), url(../../images/gaikotu.jpg);
+}
+
+.flame .logo-div {
+  font-size: 3em;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  font-family: 'Sacramento', cursive;
+  opacity: 0.6;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flame .title {
+  font-size: 10ch;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  overflow: hidden;
+}
+
+.flame .button {
+  height: 10vh;
+  margin-top: 10vh;
+  font-size: 4em;
+  border: none;
+  text-align: center;
+  background-color: transparent;
+  -webkit-animation: blink 0.9s ease-in-out infinite alternate;
+          animation: blink 0.9s ease-in-out infinite alternate;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+}
+
+.flame .button .button-font {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flame .icons {
+  position: absolute;
+  right: 5vw;
+  bottom: 5vh;
+}
+
+.flame .icons .circle {
+  margin-left: 0.6vw;
+  display: inline-block;
+  border-radius: 50%;
+  border: solid 1px white;
+  text-align: center;
+}
+
+@media screen and (min-width: 961px) and (max-width: 1500px) {
+  .flame {
+    background-position: 10%;
+    background-size: 100% 100%;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 960px) {
+  .flame {
+    background-position: 20%;
+    background-size: 160% 100%;
+  }
+  .flame .title {
+    font-size: 5ch;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 500px) {
+  .flame {
+    background-position: 15%;
+    background-size: 270% 100%;
+  }
+  .flame .logo-div {
+    font-size: 2em;
+  }
+  .flame .title {
+    font-size: 5ch;
+  }
+  .flame .button {
+    margin-top: 5vh;
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .flame {
+    background-position: 15%;
+    background-size: 270% 100%;
+  }
+  .flame .logo-div {
+    font-size: 2em;
+  }
+  .flame .title {
+    font-size: 5ch;
+  }
+  .flame .button {
+    margin-top: 5vh;
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  .flame {
+    background-position: 15%;
+    background-size: 270% 100%;
+  }
+  .flame .logo-div {
+    font-size: 2em;
+  }
+  .flame .title {
+    font-size: 5ch;
+  }
+  .flame .button {
+    margin-top: 5vh;
+    font-size: 2em;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=start.css.map */

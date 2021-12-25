@@ -1,0 +1,104 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+  /*rem算出をしやすくするために*/
+}
+
+.area {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background: -webkit-radial-gradient(rgba(242, 220, 233, 0.7) 25%, #cad9ee 75%);
+  background: radial-gradient(rgba(242, 220, 233, 0.7) 25%, #cad9ee 75%);
+}
+
+.area .logo-div {
+  font-size: 3em;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  font-family: 'Sacramento', cursive;
+  opacity: 0.6;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.area .menu {
+  position: absolute;
+  text-align: center;
+  right: 5%;
+  top: 3%;
+  width: auto;
+  padding-top: 10px;
+  z-index: 3;
+  color: white;
+}
+
+.area .btn-component {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2rem;
+}
+
+.area .btn-component .btn {
+  font-size: 1.6rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  vertical-align: middle;
+  text-decoration: none;
+  background-color: transparent;
+  border: solid;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 0 5px 0 transparent;
+          box-shadow: 0 5px 0 transparent;
+}
+
+.area .btn-component .btn:hover {
+  -webkit-transform: translate(0, 3px);
+          transform: translate(0, 3px);
+  -webkit-box-shadow: 0 2px 0 rgba(255, 255, 255, 0.1);
+          box-shadow: 0 2px 0 rgba(255, 255, 255, 0.1);
+}
+
+.area .btn-component .btn a:link {
+  color: rgba(29, 98, 240, 0.4);
+}
+
+.area .btn-component .btn a:visited {
+  color: rgba(29, 98, 240, 0.4);
+}
+
+@media screen and (min-width: 376px) and (max-width: 500px) {
+  .area .logo-div {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  .area .logo-div {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  .area .logo-div {
+    font-size: 2em;
+  }
+}
+/*# sourceMappingURL=body.css.map */

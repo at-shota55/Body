@@ -1,0 +1,93 @@
+@import "../../../style.scss";
+
+html {
+    overflow: overlay; 
+}
+
+// スクロールバー
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background: rgba($color: white, $alpha: 0.3);
+    border: none;
+}
+::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 10px;
+    border-style: solid; 
+    border-color: rgba($color: blue, $alpha: 0.3);
+    box-shadow: none;
+}
+
+.stretch-wrapper {
+    color: white;
+    width: auto;
+    height: auto;
+    .stretch-page {
+        position: relative;
+        margin-top: 10vh;
+        padding: 1em 5em;
+        opacity: 0;
+        transition: 3s;
+        &:first-child {
+            margin-top: 0;
+        }
+        .stretch-title {
+            text-align: left;
+            padding-top: 5vh;
+            padding-left: 10vw;
+            font-size: 4em;
+        }
+        .page-wrapper {
+            position: relative;
+            padding-top: 56.25% ;
+            margin-top: 5vh;
+            .stretch-movie {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .stretch-sentence {
+                font-size: 2em;
+                position: absolute;
+                margin-top: 5vh;
+                padding: 0.5em;
+                color: black;
+                background-color: rgba($color: white, $alpha: 0.8);
+                border-radius: 5px;
+            }
+        }
+    }
+    .show {
+        opacity: 1;
+        background-position: 0% 0.5em;
+        animation: SlideIn 3s ease-out both;
+        transform: translateY(-10px);
+    }
+}
+
+@include mq-down('md') {
+    .stretch-wrapper {
+        margin-top: 0.5vh;
+        .stretch-page {
+            margin-top: 0;
+            padding: 2em;
+            .stretch-title {
+                padding-top: 2vh;
+                padding-left: 0;
+                font-size: 2em;
+            }
+            .page-wrapper {
+                .stretch-sentence {
+                    font-size: 1em;
+                    margin-top: 2vh;
+                }
+                .stretch-movie {
+                    margin-left: 0;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+@import "../../style.scss";
+
+div {
+    text-align: center;
+}
+
+.flame {
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+            45deg, 
+            rgba(#CBD7ED, 0.5), 
+            rgba(#CAD9EE, 0.5), 
+        ), 
+        url(../../images/gaikotu.jpg);
+    .logo-div {
+        font-size: 3em;
+        position: absolute;
+        top: 3%;
+        left: 3%;
+        font-family: 'Sacramento', cursive;
+        opacity: 0.6;
+        display: inline-flex;
+        align-items: center;
+    }
+    .title {
+        font-size: 10ch;
+        font-family: 'Montserrat Subrayada', sans-serif;
+        overflow: hidden;
+    }
+    .button {
+        height: 10vh;
+        margin-top: 10vh;
+        font-size: 4em;
+        border: none; 
+        text-align: center;
+        background-color: transparent;
+        animation: blink 0.9s ease-in-out infinite alternate;
+        animation-delay: 2.7s;
+        .button-font {
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+    .icons {
+        position: absolute;
+        right: 5vw;
+        bottom: 5vh;
+        .circle{
+            margin-left: 0.6vw;
+            display: inline-block;
+            border-radius: 50%;
+            border: solid 1px white;
+            text-align:center;
+        }
+    }
+
+    @include mq-range('xl') {
+        background-position: 10%;
+        background-size: 100% 100%;
+    }
+    @include mq-range('lg'){
+        background-position: 20%;
+        background-size: 160% 100%;
+        .title {
+            font-size: 5ch;
+        }
+    }
+    @include mq-range('md') {
+        background-position: 15%;
+        background-size: 270% 100%;
+        .logo-div {
+            font-size: 2em;
+        }
+        .title {
+            font-size: 5ch;
+        }
+        .button {
+            margin-top: 5vh;
+            font-size: 2em;
+        }
+    }
+    @include mq-range('sm') {
+        background-position: 15%;
+        background-size: 270% 100%;
+        .logo-div {
+            font-size: 2em;
+        }
+        .title {
+            font-size: 5ch;
+        }
+        .button {
+            margin-top: 5vh;
+            font-size: 2em;
+        }
+    }
+    @include mq-range('xs') {
+        background-position: 15%;
+        background-size: 270% 100%;
+        .logo-div {
+            font-size: 2em;
+        }
+        .title {
+            font-size: 5ch;
+        }
+        .button {
+            margin-top: 5vh;
+            font-size: 2em;
+        }
+    }
+}
+
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+    
